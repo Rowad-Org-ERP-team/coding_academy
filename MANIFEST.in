@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include coding_academy *.css
+recursive-include coding_academy *.csv
+recursive-include coding_academy *.html
+recursive-include coding_academy *.ico
+recursive-include coding_academy *.js
+recursive-include coding_academy *.json
+recursive-include coding_academy *.md
+recursive-include coding_academy *.png
+recursive-include coding_academy *.py
+recursive-include coding_academy *.svg
+recursive-include coding_academy *.txt
+recursive-exclude coding_academy *.pyc
