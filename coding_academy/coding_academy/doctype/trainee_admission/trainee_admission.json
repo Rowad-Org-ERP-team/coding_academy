@@ -1,0 +1,193 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "creation": "2022-05-16 20:29:01.298098",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "title",
+  "route",
+  "introduction",
+  "column_break_3",
+  "admission_start_date",
+  "admission_end_date",
+  "published",
+  "enable_admission_application",
+  "section_break_5",
+  "bootcamp",
+  "bootcamp_name",
+  "min_age",
+  "max_age",
+  "governments",
+  "application_settings_section",
+  "study_level",
+  "working__studying",
+  "programming",
+  "internet",
+  "as_about_english_knowledge"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "admission_start_date",
+   "fieldtype": "Date",
+   "label": "Admission Start Date",
+   "mandatory_depends_on": "enable_admission_application",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "admission_end_date",
+   "fieldtype": "Date",
+   "label": "Admission End Date",
+   "mandatory_depends_on": "enable_admission_application",
+   "no_copy": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Publish on website"
+  },
+  {
+   "default": "0",
+   "depends_on": "published",
+   "fieldname": "enable_admission_application",
+   "fieldtype": "Check",
+   "label": "Enable Admission Application"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Bootcamp Details"
+  },
+  {
+   "fieldname": "introduction",
+   "fieldtype": "Text Editor",
+   "label": "Introduction"
+  },
+  {
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "governments",
+   "fieldtype": "Table",
+   "label": "Governments",
+   "options": "Trainee Admission Government Table"
+  },
+  {
+   "fetch_from": "bootcamp.min_age",
+   "fieldname": "min_age",
+   "fieldtype": "Int",
+   "label": "Minimum Age"
+  },
+  {
+   "fetch_from": "bootcamp.max_age",
+   "fieldname": "max_age",
+   "fieldtype": "Int",
+   "label": "Maximum Age"
+  },
+  {
+   "fetch_from": "bootcamp.bootcamp_name",
+   "fieldname": "bootcamp_name",
+   "fieldtype": "Data",
+   "label": "Bootcamp Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Application Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "study_level",
+   "fieldtype": "Check",
+   "label": "Ask About highest level of education"
+  },
+  {
+   "default": "0",
+   "fieldname": "working__studying",
+   "fieldtype": "Check",
+   "label": "Ask about Working / Studying Now"
+  },
+  {
+   "default": "0",
+   "fieldname": "programming",
+   "fieldtype": "Check",
+   "label": "Ask About Programming"
+  },
+  {
+   "default": "0",
+   "fieldname": "internet",
+   "fieldtype": "Check",
+   "label": "Ask About Internet"
+  },
+  {
+   "default": "0",
+   "fieldname": "as_about_english_knowledge",
+   "fieldtype": "Check",
+   "label": "As about English Knowledge"
+  }
+ ],
+ "has_web_view": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2022-05-18 03:23:10.634836",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainee Admission",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Education",
+ "route": "admissions",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "title"
+}

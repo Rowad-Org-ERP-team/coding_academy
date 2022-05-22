@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{bootcamp_category_name}",
+ "creation": "2022-05-13 12:38:44.352826",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "disable",
+  "bootcamp_category_name",
+  "project_details_section",
+  "project_template",
+  "tasks",
+  "departnemt_section",
+  "department"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "project_template",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project Template ",
+   "options": "Project Template"
+  },
+  {
+   "fieldname": "tasks",
+   "fieldtype": "Table",
+   "label": "Tasks ",
+   "options": "Bootcamp Project management Template Tasks"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable",
+   "fieldtype": "Check",
+   "label": "Disable"
+  },
+  {
+   "fieldname": "departnemt_section",
+   "fieldtype": "Section Break",
+   "label": "Departnemt"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bootcamp_category_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Bootcamp",
+   "link_doctype": "Bootcamp",
+   "link_fieldname": "bootcamp_category"
+  }
+ ],
+ "modified": "2022-05-15 15:02:47.886556",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Bootcamp Category",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

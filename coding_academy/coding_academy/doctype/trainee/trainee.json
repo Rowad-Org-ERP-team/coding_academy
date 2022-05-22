@@ -1,0 +1,385 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-05-16 05:14:30.802847",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "enabled",
+  "section_break_3",
+  "naming_series",
+  "full_name",
+  "email_id",
+  "mobile_number1",
+  "mobile_number2",
+  "department",
+  "column_break_4",
+  "joining_date",
+  "date_of_birth",
+  "blood_group",
+  "gender",
+  "nationality",
+  "image",
+  "status",
+  "section_break_22",
+  "government",
+  "street",
+  "user_section",
+  "user",
+  "create_user",
+  "create_user_permission",
+  "section_break_18",
+  "guardians",
+  "educational_qualification",
+  "education",
+  "trainee_interests_section",
+  "interests",
+  "trainee_skills",
+  "skills",
+  "trainee_experiences_section",
+  "experiences",
+  "sb53",
+  "bio",
+  "personal_details",
+  "identification_card",
+  "passport_number",
+  "date_of_issue",
+  "valid_upto",
+  "place_of_issue",
+  "marital_status",
+  "column_break6",
+  "family_background",
+  "health_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "oldfieldname": "naming_series",
+   "oldfieldtype": "Select",
+   "options": "Trainee-.YYYY.",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Joining Date"
+  },
+  {
+   "fetch_from": "user_id.user_image",
+   "fetch_if_empty": 1,
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "oldfieldname": "date_of_birth",
+   "oldfieldtype": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nA+\nA-\nB+\nB-\nAB+\nAB-\nO+\nO-"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "oldfieldname": "gender",
+   "oldfieldtype": "Select",
+   "options": "Gender",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Nationality"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "Home Address"
+  },
+  {
+   "fieldname": "government",
+   "fieldtype": "Link",
+   "label": "Government",
+   "options": "Government"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "guardians",
+   "fieldtype": "Table",
+   "label": "Guardians",
+   "options": "Trainee Guardians Table"
+  },
+  {
+   "fieldname": "trainee_interests_section",
+   "fieldtype": "Section Break",
+   "label": "Trainee Interests"
+  },
+  {
+   "fieldname": "interests",
+   "fieldtype": "Table",
+   "label": "Interests",
+   "options": "Trainee Interests"
+  },
+  {
+   "fieldname": "trainee_skills",
+   "fieldtype": "Section Break",
+   "label": "Trainee Skills"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Table",
+   "label": "Skills",
+   "options": "Trainee Skills"
+  },
+  {
+   "fieldname": "trainee_experiences_section",
+   "fieldtype": "Section Break",
+   "label": "Trainee Experiences"
+  },
+  {
+   "fieldname": "experiences",
+   "fieldtype": "Table",
+   "label": "Experiences",
+   "options": "Trainee Experiences"
+  },
+  {
+   "depends_on": "eval:(!doc.user_id)",
+   "fieldname": "create_user",
+   "fieldtype": "Button",
+   "label": "Create User"
+  },
+  {
+   "default": "1",
+   "depends_on": "user_id",
+   "description": "This will restrict user access to other employee records",
+   "fieldname": "create_user_permission",
+   "fieldtype": "Check",
+   "label": "Create User Permission"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "oldfieldname": "department",
+   "oldfieldtype": "Link",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb53",
+   "fieldtype": "Section Break",
+   "label": "Personal Bio"
+  },
+  {
+   "description": "Short biography for website and other publications.",
+   "fieldname": "bio",
+   "fieldtype": "Text Editor",
+   "label": "Bio / Cover Letter"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "personal_details",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Identification Card"
+  },
+  {
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "valid_upto",
+   "fieldtype": "Date",
+   "label": "Valid Upto"
+  },
+  {
+   "fieldname": "place_of_issue",
+   "fieldtype": "Data",
+   "label": "Place of Issue"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "column_break6",
+   "fieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "description": "Here you can maintain family details like name and occupation of parent, spouse and children",
+   "fieldname": "family_background",
+   "fieldtype": "Small Text",
+   "label": "Family Background"
+  },
+  {
+   "description": "Here you can maintain height, weight, allergies, medical concerns etc",
+   "fieldname": "health_details",
+   "fieldtype": "Small Text",
+   "label": "Health Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "educational_qualification",
+   "fieldtype": "Section Break",
+   "label": "Educational Qualification"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Table",
+   "label": "Education",
+   "options": "Trainee Education"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Email Address",
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile_number1",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Mobile Number (Call)"
+  },
+  {
+   "fieldname": "mobile_number2",
+   "fieldtype": "Data",
+   "label": "Mobile Number (Whatsapp)"
+  },
+  {
+   "fieldname": "user_section",
+   "fieldtype": "Section Break",
+   "label": "User"
+  },
+  {
+   "fieldname": "identification_card",
+   "fieldtype": "Attach",
+   "label": "Identification Card"
+  },
+  {
+   "fieldname": "street",
+   "fieldtype": "Data",
+   "label": "Street"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive\nIn Blocklist"
+  }
+ ],
+ "image_field": "image",
+ "links": [],
+ "modified": "2022-05-18 01:16:31.837390",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainee",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Instructor"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LMS User",
+   "share": 1
+  }
+ ],
+ "restrict_to_domain": "Education",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

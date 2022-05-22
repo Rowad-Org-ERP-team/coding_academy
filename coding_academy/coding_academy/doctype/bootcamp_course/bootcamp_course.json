@@ -1,0 +1,210 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{course_name} ({bootcamp_code})",
+ "creation": "2022-05-14 11:47:49.154167",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "bootcamp",
+  "bootcamp_code",
+  "section_break_4",
+  "start_date",
+  "end_date",
+  "hrs_per_day",
+  "total_hrs",
+  "section_break_3",
+  "course_name",
+  "trainers_and_trainer_support_section",
+  "trainers_and_trainer_supports",
+  "section_break_6",
+  "lessons",
+  "description",
+  "hero_image",
+  "course_status_section",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Portal Settings"
+  },
+  {
+   "fieldname": "lessons",
+   "fieldtype": "Table",
+   "label": "Lesson",
+   "options": "Course Lessons Table"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Hero Image"
+  },
+  {
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "trainers_and_trainer_support_section",
+   "fieldtype": "Section Break",
+   "label": "Trainers and Trainer Support"
+  },
+  {
+   "fieldname": "trainers_and_trainer_supports",
+   "fieldtype": "Table",
+   "label": "Trainers and Trainer Supports",
+   "options": "Trainers and Trainer Supports Table",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bootcamp.bootcamp_code",
+   "fieldname": "bootcamp_code",
+   "fieldtype": "Data",
+   "label": "Bootcamp Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "hrs_per_day",
+   "fieldtype": "Int",
+   "label": "Hrs Per Day"
+  },
+  {
+   "fieldname": "total_hrs",
+   "fieldtype": "Int",
+   "label": "Total Hrs"
+  },
+  {
+   "fieldname": "course_status_section",
+   "fieldtype": "Section Break",
+   "label": "Course Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nEnded"
+  }
+ ],
+ "image_field": "hero_image",
+ "links": [
+  {
+   "group": "Lessons & Topics",
+   "link_doctype": "Lesson",
+   "link_fieldname": "course"
+  },
+  {
+   "group": "Lessons & Topics",
+   "link_doctype": "Lesson Topic",
+   "link_fieldname": "course"
+  }
+ ],
+ "modified": "2022-05-16 01:50:48.831073",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Bootcamp Course",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Instructor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Education Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Education",
+ "search_fields": "course_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

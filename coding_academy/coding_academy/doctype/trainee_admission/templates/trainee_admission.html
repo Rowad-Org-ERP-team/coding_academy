@@ -1,0 +1,79 @@
+
+{% extends "templates/web.html" %}
+
+{% block breadcrumbs %}
+	{% include "templates/includes/breadcrumbs.html" %}
+{% endblock %}
+
+{% block header %}
+<h1>{{ title }}</h1>
+{% endblock %}
+
+{% block page_content %}
+	{% set today = frappe.utils.getdate(frappe.utils.nowdate()) %}
+	<div class="row transaction-subheading">
+	    <div class="col-xs-6">
+	        <span class="indicator
+				{% if frappe.utils.getdate(doc.admission_end_date) == today %}
+					red"> Application will be closed soon
+				{% elif frappe.utils.getdate(doc.admission_end_date) > today >= frappe.utils.getdate(doc.admission_start_date)%}
+					green"> Application open
+				{% elif frappe.utils.getdate(doc.admission_start_date) > today %}
+					blue"> Application will open
+				{% else %}
+					gray
+				{% endif  %}
+	        </span>
+		</div>
+	    <div class="col-xs-6 text-muted text-right small">
+	        {{ _("Start on") }}: {{ frappe.format_date(admission_start_date) }}<br>
+	        {{ _("End on") }}: {{ frappe.format_date(admission_end_date) }}
+	    </div>
+	</div><br>
+
+	{%- if introduction -%}
+		<div>{{ introduction }}</div>
+	{% endif %}
+
+	{% if governments %}
+		<br>
+		<div class="table-responsive">
+			<h3 class="bold">Bootcamps Details:</h3>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr class="active">
+						<th style="width: 40px">Bootcamp.</th>
+                        <th style="width: 40px">Government.</th>
+                        <th style="width: 40px">Seats.</th>
+						<th style="width: 100px">Minumum Age</th>
+						<th style="width: 100px">Maximum Age</th>
+						
+						{%- if doc.enable_admission_application and frappe.utils.getdate(doc.admission_start_date) <= today -%}
+							<th style="width: 120px"></th>
+						{% endif %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in governments %}
+						<tr>
+							<td>{{ bootcamp_name }}</td>
+                            <td>{{ row.government }}</td>
+                            <td>{{ row.seats }}</td>
+							<td>{{ min_age }}</td>
+							<td>{{ max_age }}</td>
+				
+							{%- if doc.enable_admission_application and frappe.utils.getdate(doc.admission_start_date) <= today -%}
+							<td>
+								<a class='btn btn-sm btn-primary' href='/trainee-applicant?new=1&student_admission={{doc.name}}&program={{bootcamp}}&academic_year={{academic_year}}''>
+									{{ _("Apply Now") }}
+								</a>
+							</td>
+							{% endif %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	{% endif %}
+
+{% endblock %}

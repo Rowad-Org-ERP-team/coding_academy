@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-08 18:22:33.667545",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "government",
+  "coordinator",
+  "seats",
+  "column_break_4",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "government",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Government",
+   "options": "Government",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Long Text",
+   "in_preview": 1,
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "coordinator",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Coordinator",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "seats",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Seats",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-08 18:39:45.031112",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Program Governments Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

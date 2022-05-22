@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-16 03:04:12.551933",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "bootcamp",
+  "bootcamp_code",
+  "title",
+  "event_type",
+  "address",
+  "event_administrator",
+  "column_break_7",
+  "from_date",
+  "to_date",
+  "from_time",
+  "to_time",
+  "total_hrs",
+  "event_participants_section",
+  "group",
+  "participants",
+  "description_section",
+  "description",
+  "event_project_details_section",
+  "project_template",
+  "project",
+  "event_status_section",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bootcamp.bootcamp_code",
+   "fieldname": "bootcamp_code",
+   "fieldtype": "Data",
+   "label": "Bootcamp Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event Type",
+   "options": "Bootcamp Event Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Address",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Data",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time"
+  },
+  {
+   "fieldname": "total_hrs",
+   "fieldtype": "Int",
+   "label": "Total Hrs"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "event_project_details_section",
+   "fieldtype": "Section Break",
+   "label": "Event Project Details"
+  },
+  {
+   "fieldname": "project_template",
+   "fieldtype": "Link",
+   "label": "Project Template",
+   "options": "Project Template"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "event_status_section",
+   "fieldtype": "Section Break",
+   "label": "Event Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Progress\nEnded"
+  },
+  {
+   "fieldname": "event_administrator",
+   "fieldtype": "Data",
+   "label": "Event Administrator"
+  },
+  {
+   "fieldname": "event_participants_section",
+   "fieldtype": "Section Break",
+   "label": "Event Participants"
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Link",
+   "label": "Group",
+   "options": "Trainee Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Event Participants Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-05-16 03:21:21.891754",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Bootcamp Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

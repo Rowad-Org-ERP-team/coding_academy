@@ -1,0 +1,128 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {course} - ({date})",
+ "creation": "2022-05-13 19:10:27.285459",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "bootcamp",
+  "course",
+  "column_break_4",
+  "date",
+  "from",
+  "to",
+  "hrs",
+  "description_section",
+  "description",
+  "topics_section",
+  "topics",
+  "challenge"
+ ],
+ "fields": [
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "topics_section",
+   "fieldtype": "Section Break",
+   "label": "Topics"
+  },
+  {
+   "fieldname": "topics",
+   "fieldtype": "Table",
+   "label": "Topics",
+   "options": "Lesson Topics Table"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "course.bootcamp",
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Bootcamp Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Time",
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Time",
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hrs",
+   "fieldtype": "Int",
+   "label": "Hrs"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "challenge",
+   "fieldtype": "Link",
+   "label": "Challenge",
+   "options": "Lesson Challenge"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-05-16 02:39:30.422545",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Lesson",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

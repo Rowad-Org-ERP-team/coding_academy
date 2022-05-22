@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "creation": "2022-05-18 04:09:33.834263",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "guardian_name",
+  "relation",
+  "phone"
+ ],
+ "fields": [
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Guardian Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Relation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-18 04:51:39.686571",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainee Applicant Guardians Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "restrict_to_domain": "Education",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

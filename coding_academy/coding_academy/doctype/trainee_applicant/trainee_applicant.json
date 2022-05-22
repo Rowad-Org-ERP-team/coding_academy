@@ -1,0 +1,439 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "creation": "2022-05-18 00:59:57.862808",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "application_status",
+  "trainee_admission",
+  "department",
+  "full_name",
+  "mobile_number_call",
+  "mobile_number_whatsapp",
+  "email_address",
+  "column_break_8",
+  "application_date",
+  "date_of_birth",
+  "gender",
+  "blood_group",
+  "nationality",
+  "image",
+  "study_level",
+  "section_break_4",
+  "bootcamp_name",
+  "bootcamp",
+  "government",
+  "home_address",
+  "city",
+  "street",
+  "qs_section",
+  "computer_using_knowledge",
+  "internet_using_knowledge",
+  "internet_service_subscription",
+  "the_highest_level_of_education",
+  "the_major",
+  "other_major",
+  "graduation_date",
+  "english_language_level",
+  "currently_studying",
+  "currently_working",
+  "have_computer_meet_specifications",
+  "programming_languages",
+  "programming_background",
+  "reason_of_joining",
+  "code_wars_link",
+  "github_link",
+  "applied_by_my_self",
+  "section_break_20",
+  "guardians",
+  "sb53",
+  "bio",
+  "personal_details",
+  "identification_card",
+  "passport_number",
+  "date_of_issue",
+  "valid_upto",
+  "place_of_issue",
+  "marital_status",
+  "column_break6",
+  "family_background",
+  "health_details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "fieldname": "sb53",
+   "fieldtype": "Section Break",
+   "label": "Personal Bio"
+  },
+  {
+   "description": "Short biography for website and other publications.",
+   "fieldname": "bio",
+   "fieldtype": "Text Editor",
+   "label": "Bio / Cover Letter"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "personal_details",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Identification Card"
+  },
+  {
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "valid_upto",
+   "fieldtype": "Date",
+   "label": "Valid Upto"
+  },
+  {
+   "fieldname": "place_of_issue",
+   "fieldtype": "Data",
+   "label": "Place of Issue"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "column_break6",
+   "fieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "description": "Here you can maintain family details like name and occupation of parent, spouse and children",
+   "fieldname": "family_background",
+   "fieldtype": "Small Text",
+   "label": "Family Background"
+  },
+  {
+   "description": "Here you can maintain height, weight, allergies, medical concerns etc",
+   "fieldname": "health_details",
+   "fieldtype": "Small Text",
+   "label": "Health Details"
+  },
+  {
+   "fieldname": "identification_card",
+   "fieldtype": "Attach",
+   "label": "Identification Card"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile_number_call",
+   "fieldtype": "Data",
+   "label": "Mobile Number (Call)",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "student_admission.bootcamp",
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "government",
+   "fieldtype": "Link",
+   "label": "Bootcamp Government",
+   "options": "Government",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "depends_on": "eval:doc.docstatus != 0",
+   "fieldname": "application_status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "label": "Application Status",
+   "no_copy": 1,
+   "options": "Draft\nApplied\nApproved\nRejected\nAdmitted"
+  },
+  {
+   "default": "Today",
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "label": "Application Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Bootcamp Details"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "A+\nA-\nB+\nB-\nO+\nO-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "home_address",
+   "fieldtype": "Section Break",
+   "label": "Home Address"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "Guardian Details"
+  },
+  {
+   "fieldname": "guardians",
+   "fieldtype": "Table",
+   "label": "Guardians",
+   "options": "Trainee Applicant Guardians Table"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trainee Applicant",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trainee Applicant",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_number_whatsapp",
+   "fieldtype": "Data",
+   "label": "Mobile Number (Whatsapp)"
+  },
+  {
+   "fetch_from": "student_admission.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "street",
+   "fieldtype": "Data",
+   "label": "Street"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fetch_from": "student_admission.bootcamp_name",
+   "fieldname": "bootcamp_name",
+   "fieldtype": "Data",
+   "label": "Bootcamp Name"
+  },
+  {
+   "fieldname": "trainee_admission",
+   "fieldtype": "Link",
+   "label": "Trainee Admission",
+   "options": "Trainee Admission"
+  },
+  {
+   "default": "0",
+   "fetch_from": "trainee_admission.study_level",
+   "fieldname": "study_level",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "study level"
+  },
+  {
+   "fieldname": "qs_section",
+   "fieldtype": "Section Break",
+   "label": "QS"
+  },
+  {
+   "depends_on": "eval:doc.study_level",
+   "fieldname": "the_highest_level_of_education",
+   "fieldtype": "Select",
+   "label": "The highest level of education",
+   "mandatory_depends_on": "eval:doc.study_level",
+   "options": "Primary School\nSecondary School\nHigh school\nDiploma or the equivalent\nBachelor\u2019s degree\nMaster\u2019s degree\nTechnical/Vocational training"
+  },
+  {
+   "fieldname": "the_major",
+   "fieldtype": "Select",
+   "label": "The Major",
+   "options": "\nInformation Technology\nInformation System\nSoftware Engineering\nComputer Engineering\nHigh School\nOther"
+  },
+  {
+   "depends_on": "eval:doc.the_major == 'Other'",
+   "fieldname": "other_major",
+   "fieldtype": "Data",
+   "label": "Other Major",
+   "mandatory_depends_on": "eval:doc.the_major == 'Other'"
+  },
+  {
+   "fieldname": "graduation_date",
+   "fieldtype": "Date",
+   "label": "Graduation Date"
+  },
+  {
+   "fieldname": "english_language_level",
+   "fieldtype": "Select",
+   "label": "English Language Level ",
+   "options": "Baisic\nIntermediate\nAdvance"
+  },
+  {
+   "default": "0",
+   "fieldname": "currently_studying",
+   "fieldtype": "Check",
+   "label": "currently studying"
+  },
+  {
+   "fieldname": "currently_working",
+   "fieldtype": "Select",
+   "label": "currently working",
+   "options": "\nfull-time\npart-time\nno"
+  },
+  {
+   "fieldname": "computer_using_knowledge",
+   "fieldtype": "Select",
+   "label": "Computer Using Knowledge",
+   "options": "Strong\nAverage\nLow"
+  },
+  {
+   "fieldname": "internet_using_knowledge",
+   "fieldtype": "Select",
+   "label": "Internet Using Knowledge",
+   "options": "Strong\nAverage\nLow"
+  },
+  {
+   "fieldname": "internet_service_subscription",
+   "fieldtype": "Select",
+   "label": "Internet Service Subscription",
+   "options": "3G\nADSL\nNeighborhood Network\nNO"
+  },
+  {
+   "fieldname": "have_computer_meet_specifications",
+   "fieldtype": "Select",
+   "label": "Have Computer meet specifications",
+   "options": "Yes , I have a computer permanently\nNo, but I can share a friend's or relative's computer\nNo , I have not computer"
+  },
+  {
+   "fieldname": "programming_languages",
+   "fieldtype": "Text Editor",
+   "label": "Programming Languages"
+  },
+  {
+   "fieldname": "programming_background",
+   "fieldtype": "Text Editor",
+   "label": "Programming background"
+  },
+  {
+   "fieldname": "reason_of_joining",
+   "fieldtype": "Text Editor",
+   "label": "Reason Of Joining"
+  },
+  {
+   "fieldname": "code_wars_link",
+   "fieldtype": "Data",
+   "label": "Code Wars Link"
+  },
+  {
+   "fieldname": "github_link",
+   "fieldtype": "Data",
+   "label": "Github Link"
+  },
+  {
+   "default": "0",
+   "fieldname": "applied_by_my_self",
+   "fieldtype": "Check",
+   "label": "Applied By My Self"
+  }
+ ],
+ "image_field": "image",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-18 04:40:27.556527",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainee Applicant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "restrict_to_domain": "Education",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "creation": "2022-05-16 03:23:34.178617",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "experience",
+  "company",
+  "from",
+  "to"
+ ],
+ "fields": [
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From"
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To"
+  },
+  {
+   "fieldname": "experience",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Experience",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-16 03:29:52.067814",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainee Experiences",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "restrict_to_domain": "Education",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

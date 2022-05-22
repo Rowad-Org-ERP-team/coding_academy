@@ -1,0 +1,392 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{bootcamp_name} - {bootcamp_code}",
+ "creation": "2022-05-13 18:14:13.350264",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "bootcamp_category",
+  "trainee_age_group",
+  "min_age",
+  "max_age",
+  "bootcamp_name",
+  "bootcamp_name_ar",
+  "bootcamp_code",
+  "bootcamp_type",
+  "column_break_3",
+  "start_date",
+  "end_date",
+  "duration",
+  "training_time_per_date",
+  "is_free",
+  "admission_settings_section",
+  "admission_test_is_required",
+  "personal_meeting_is_required",
+  "emotional_intelligence_test_is_required",
+  "column_break_18",
+  "admission_test",
+  "trainee_personal__meeting",
+  "emotional_intelligence_test",
+  "governments_and_capacity",
+  "number_of_seats",
+  "governments",
+  "section_break_courses",
+  "courses",
+  "bootcamp_project_details",
+  "project_template",
+  "project",
+  "bootcamp_delivery_plan",
+  "section_break_5",
+  "is_published",
+  "allow_self_enroll",
+  "is_featured",
+  "column_break_11",
+  "intro_video",
+  "hero_image",
+  "description",
+  "section_break_34",
+  "bootcamp_status",
+  "section_break_info"
+ ],
+ "fields": [
+  {
+   "fieldname": "trainee_age_group",
+   "fieldtype": "Link",
+   "label": "Trainee Age group",
+   "options": "Age Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bootcamp_category",
+   "fieldtype": "Link",
+   "label": "Bootcamp Category",
+   "options": "Bootcamp Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_info",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "bootcamp_category.name",
+   "fieldname": "bootcamp_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bootcamp Name (English)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bootcamp_name_ar",
+   "fieldtype": "Data",
+   "label": "Bootcamp Name (Arabic)",
+   "unique": 1
+  },
+  {
+   "fieldname": "bootcamp_code",
+   "fieldtype": "Data",
+   "label": "Bootcamp Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bootcamp_type",
+   "fieldtype": "Select",
+   "label": "Bootcamp Type",
+   "options": "\nOnline\nPresence\nHybrid"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "training_time_per_date",
+   "fieldtype": "Duration",
+   "label": "Training Time Per Day"
+  },
+  {
+   "fieldname": "governments_and_capacity",
+   "fieldtype": "Section Break",
+   "label": "Governments And Capacity"
+  },
+  {
+   "fieldname": "number_of_seats",
+   "fieldtype": "Int",
+   "label": "Total Number Of Seats"
+  },
+  {
+   "fieldname": "governments",
+   "fieldtype": "Table",
+   "label": "Governments",
+   "options": "Bootcamp Governments Table",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_courses",
+   "fieldtype": "Section Break",
+   "label": "Courses"
+  },
+  {
+   "fieldname": "courses",
+   "fieldtype": "Table",
+   "label": "Courses",
+   "options": "Bootcamp Courses Table"
+  },
+  {
+   "fieldname": "bootcamp_project_details",
+   "fieldtype": "Section Break",
+   "label": "Management Details"
+  },
+  {
+   "fieldname": "project_template",
+   "fieldtype": "Link",
+   "label": "Project Template",
+   "options": "Project Template"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "bootcamp_delivery_plan",
+   "fieldtype": "Link",
+   "label": "Delivery Plan",
+   "options": "Bootcamp Delivery Plan"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Portal Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.is_published == 1",
+   "fieldname": "allow_self_enroll",
+   "fieldtype": "Check",
+   "label": "Allow Self Enroll"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.is_published == 1",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Is Featured"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "is_published",
+   "fieldname": "intro_video",
+   "fieldtype": "Data",
+   "label": "Intro Video"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Hero Image"
+  },
+  {
+   "depends_on": "is_published",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_34",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bootcamp_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIn Registration Period\nIn Training Period\nFinished"
+  },
+  {
+   "default": "0",
+   "fieldname": "personal_meeting_is_required",
+   "fieldtype": "Check",
+   "label": "Personal Meeting is required"
+  },
+  {
+   "default": "0",
+   "fieldname": "emotional_intelligence_test_is_required",
+   "fieldtype": "Check",
+   "label": "Emotional Intelligence Test is required"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_free",
+   "fieldtype": "Check",
+   "label": "Is Free"
+  },
+  {
+   "fieldname": "admission_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Admission Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "admission_test_is_required",
+   "fieldtype": "Check",
+   "label": "Admission Test is required"
+  },
+  {
+   "depends_on": "eval:doc.admission_test_is_required",
+   "fieldname": "admission_test",
+   "fieldtype": "Link",
+   "label": "Admission Test",
+   "mandatory_depends_on": "eval:doc.admission_test_is_required",
+   "options": "Admission Test"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.personal_meeting_is_required",
+   "fieldname": "trainee_personal__meeting",
+   "fieldtype": "Link",
+   "label": "Trainee Personal  Meeting",
+   "mandatory_depends_on": "eval:doc.personal_meeting_is_required",
+   "options": "Trainee Personal Meeting"
+  },
+  {
+   "depends_on": "eval:doc.emotional_intelligence_test_is_required",
+   "fieldname": "emotional_intelligence_test",
+   "fieldtype": "Link",
+   "label": "Emotional Intelligence Test",
+   "mandatory_depends_on": "eval:doc.emotional_intelligence_test_is_required",
+   "options": "Emotional Intelligence Test"
+  },
+  {
+   "fetch_from": "trainee_age_group.minimum_age",
+   "fieldname": "min_age",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Min Age"
+  },
+  {
+   "fetch_from": "trainee_age_group.maximum_age",
+   "fieldname": "max_age",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Max Age"
+  }
+ ],
+ "image_field": "hero_image",
+ "links": [
+  {
+   "group": "Bootcamp Content",
+   "link_doctype": "Bootcamp Course",
+   "link_fieldname": "bootcamp"
+  },
+  {
+   "group": "Bootcamp Content",
+   "link_doctype": "Lesson",
+   "link_fieldname": "bootcamp"
+  }
+ ],
+ "modified": "2022-05-16 21:03:26.637190",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Bootcamp",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Instructor",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Student",
+   "share": 1
+  }
+ ],
+ "restrict_to_domain": "Education",
+ "search_fields": "bootcamp_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

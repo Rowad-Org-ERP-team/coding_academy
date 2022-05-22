@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-14 22:36:10.167599",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "government",
+  "trainer",
+  "trainer_support"
+ ],
+ "fields": [
+  {
+   "fetch_from": "bootcamp.governments.government",
+   "fieldname": "government",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Government"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer",
+   "options": "Instructor"
+  },
+  {
+   "fieldname": "trainer_support",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Trainer Support",
+   "options": "Instructor"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-15 00:52:47.554959",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Trainers and Trainer Supports Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

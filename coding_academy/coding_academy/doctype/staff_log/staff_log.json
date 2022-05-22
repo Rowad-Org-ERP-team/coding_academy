@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "creation": "2022-05-18 18:45:56.190093",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "column_break_3",
+  "bootcamp",
+  "government",
+  "type",
+  "name1",
+  "section_break_8",
+  "other_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bootcamp",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bootcamp",
+   "options": "Bootcamp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "other_details",
+   "fieldtype": "Small Text",
+   "label": "Other details"
+  },
+  {
+   "fieldname": "government",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Government",
+   "options": "Government",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Bootcamp\nBootcamp Course\nBootcamp Project\nBootcamp Event"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Name",
+   "options": "type",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-18 19:01:42.396337",
+ "modified_by": "Administrator",
+ "module": "Coding Academy",
+ "name": "Staff Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "restrict_to_domain": "Education",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
